@@ -30,7 +30,7 @@
             </div>
         </main>
     </div>
-    <footer class="absolute bottom-0 w-full">
+    <footer class="fix bottom-0 w-full">
         <div class="h-24 w-full flex justify-center items-center bg-slate-100">
             <p>Copyright &copy; 2023</p>
         </div>
