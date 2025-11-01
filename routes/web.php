@@ -9,6 +9,8 @@ Route::get("/", function () {
 
 Route::get("/product", [ProductController::class, "index"]);
 
-Route::get("/product/detail/{id}", [ProductController::class, "show"]);
+Route::get("/product/detail/{id}", [ProductController::class, "show"])->name(
+    "product.detail",
+);
 
 Route::get("/product/jenis/{jenis}", [ProductController::class, "showByJenis"]);

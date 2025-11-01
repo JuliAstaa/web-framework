@@ -11,7 +11,7 @@ class ProductController extends Controller
     function __construct()
     {
         $this->products = [
-            [
+            1 => [
                 "id" => 1,
                 "nama" => "Lenovo Ideapad Gaming 3",
                 "harga" => 15000000,
@@ -22,7 +22,7 @@ class ProductController extends Controller
                     "https://sinar-mulia.co.id/wp-content/uploads/2023/12/82K2027FID.jpg",
                 "jenis" => "Laptop",
             ],
-            [
+            2 => [
                 "id" => 2,
                 "nama" => "Samsung A55 5G",
                 "harga" => 6999999,
@@ -33,7 +33,7 @@ class ProductController extends Controller
                     "https://sosialita.tanahlautkab.go.id/assets/uploads/webp/fotoproduk/crop/EVW5uXiz20241116100312.png.webp",
                 "jenis" => "Handphone",
             ],
-            [
+            3 => [
                 "id" => 3,
                 "nama" => "Lenovo Ideapad Slim",
                 "harga" => 10000000,
@@ -44,7 +44,7 @@ class ProductController extends Controller
                     "https://els.id/wp-content/uploads/2023/10/Lenovo-IdeaPad-Slim-3.png",
                 "jenis" => "Laptop",
             ],
-            [
+            4 => [
                 "id" => 4,
                 "nama" => "Samsung J2 Prime",
                 "harga" => 2000000,
@@ -55,7 +55,7 @@ class ProductController extends Controller
                     "https://images.tokopedia.net/img/cache/500-square/product-1/2019/7/2/3621625/3621625_50786f79-cda4-4941-9479-533722f84c5a_700_700.jpg",
                 "jenis" => "Handphone",
             ],
-            [
+            5 => [
                 "id" => 5,
                 "nama" => "Macbook Air M4",
                 "harga" => 24000000,
@@ -84,7 +84,7 @@ class ProductController extends Controller
 
     public function show(int $id)
     {
-        $product = $this->products[$id - 1];
+        $product = $this->products[$id];
         return view("product.detail", [
             "title" => "Detail Product",
             "product" => $product,

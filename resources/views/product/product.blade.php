@@ -21,7 +21,7 @@
 
         <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
             @foreach ($products as $product)
-                <a href="/product/detail/{{ $product['id'] }}"
+                <a href="{{ route('product.detail', ['id' => $product['id']]) }}"
                     class="bg-white shadow hover:shadow-lg transition p-4 flex flex-col justify-between rounded-lg">
                     <div class="card-header h-full">
                         <div class="img">
