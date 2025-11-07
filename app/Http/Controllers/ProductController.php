@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use phpDocumentor\Reflection\DocBlock\Tags\Var_;
+
+use function Laravel\Prompts\progress;
 
 class ProductController extends Controller
 {
@@ -103,6 +106,23 @@ class ProductController extends Controller
             "title" => "Product Jenis " . $jenis,
             "products" => $filteredProducts,
             "jenis" => [$jenis],
+        ]);
+    }
+
+    public function searchProduct(Request $request)
+    {
+        $produks = $this->products;
+        if ($request->has("search")) {
+            foreach ($produks as $key => $product) {
+                if (stripos($product["nama"], $request->search) === false) {
+                    unset($produks[$key]);
+                }
+            }
+        }
+
+        return view("product.search-product", [
+            "title" => "Product search by " . $request->search,
+            "products" => $produks,
         ]);
     }
 }

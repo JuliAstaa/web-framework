@@ -8,7 +8,15 @@
 
 @section('content')
     <div class="bg-gray-100 min-h-screen">
-        <h1 class="text-2xl font-bold mb-6 text-gray-800">TERPOPULER</h1>
+        <div class="atasan flex justify-between">
+            <h1 class="text-2xl font-bold mb-6 text-gray-800">TERPOPULER</h1>
+            <div>
+                <form action="{{ route('product.search') }}">
+                    <input type="text" name="search" placeholder="Cari Produk" class="border rounded px-2 py-1">
+                    <button type="submit" class="bg-[#3E5F44] text-white px-2 py-1 rounded">Cari</button>
+                </form>
+            </div>
+        </div>
 
         <div class="category ">
             <h1 class="text-xl font-semibold my-2">Kategori</h1>

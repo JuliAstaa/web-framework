@@ -10,6 +10,11 @@ Route::get("/", function () {
 
 Route::get("/product", [ProductController::class, "index"]);
 
+Route::get("/product/search", [
+    ProductController::class,
+    "searchProduct",
+])->name("product.search");
+
 Route::get("/product/detail/{id}", [ProductController::class, "show"])->name(
     "product.detail",
 );
